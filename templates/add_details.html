@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS-Prime Form</title>
+    {% load static %}
+    {% comment %} <link rel="stylesheet" href="style1.css"> {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="{% static '/js/script.js' %}" type="text/javascript"></script>
+
+    <!-- CSS FOR SPINNER FOR INPUT TYPE NUMBER -->
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form first">
+                <div class="details company">
+                    <span class="title">Company Details</span>
+                    
+                    <div class="fields">
+                        <div class="input-fields">
+                            <label>Client Id</label>
+                            <input type="number" placeholder="Enter Client ID" required name="clientId" id="clientId">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Company Name</label>
+                            <input type="text" placeholder="Enter company name" required name="name">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>IEC Number</label>
+                            <input type="number" placeholder="Enter IEC Number" required name="iecNo">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>PAN Number</label>
+                            <input type="number" placeholder="Enter PAN Number" required name="panNo">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>GST Number</label>
+                            <input type="number" placeholder="Enter GST Number" required name="gstNo">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Address</label>
+                            <input type="text" placeholder="Enter Address" required name="address">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Phone Number</label>
+                            <input type="number" placeholder="Enter Phone Number" name="phoneNo" required pattern="[7-9]{1}[0-9]{9}">
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Factory Address</label>
+                            <input type="text" placeholder="Enter Factory Address" name="factaddress" required>
+                        </div>
+                        
+                        <div class="input-fields left">
+                            <label class="left">PIC</label>
+                            <input type="number" placeholder="Enter PIC" name="pic" required>
+                        </div>
+                        <!-- --------------------------------- Iss field ko hatna hai ------------------------------------ -->
+                        <div class="input-fields">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter Email" name="email" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Identity Details</span>
+                    
+                    <div class="fields">
+                        <div class="input-fields">
+                            <label>Job Type-1</label>
+                            <select name="jobtype">
+                                <option disabled selected>Select</option>
+                                <option value="Advance">Advance</option>
+                                <option value="EPCG">EPCG</option>
+                                <option value="DFIA">DFIA</option>
+                                <option value="DSC">DSC</option>
+                                <option value="ICEGATE">ICEGATE</option>
+                            </select>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Job Type-2</label>
+                            <select name="jobtypes">
+                                <option disabled selected>Select</option>
+                                <option value="Issuance">Issuance</option>
+                                <option value="Amendment">Amendment</option>
+                                <option value="Revalidation">Revalidation</option>
+                                <option value="EOEXTENSION">EO Extension</option>
+                            </select>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Job Type-3</label>
+                            <select name="jobtypet">
+                                <option disabled selected>Select</option>
+                                <option value="SION">SION</option>
+                                <option value="ZALC">ZALC</option>
+                                <option value="Enhancement">Enhancement</option>
+                                <option value="Reduction">Reduction</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form second">
+                <div class="details Job">
+                    <span class="title">Company Details-2</span>
+                    
+                    <div class="fields">
+                        <div class="input-fields">
+                            <label>File Number</label>
+                            <input type="number" placeholder="Enter File Number" name="fileno" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>License Number</label>
+                            <input type="number" placeholder="Enter License Number" name="licenseno" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>CIF Number</label>
+                            <input type="number" placeholder="Enter CIF Number" name="CIFno" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>FOB Number</label>
+                            <input type="number" placeholder="Enter FOB Number" name="FOBno" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Port Code</label>
+                            <input type="text" placeholder="Enter Port Code" name="port" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Date</label>
+                            <input type="date" name="date" id="date-1" required>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Date 2</label>
+                            <input type="date" name="datet" id="date-2" required>
+                        </div>
+                        
+                        <div class="input-fields">
+                            <label>Date Cal</label>
+                            <input type="text" id="output1" readonly name="output">
+                        </div>
+                        
+                        <div class="input-fields">
+                            <label>Notes</label>
+                            <textarea row="6" name="notes" placeholder="Enter Notes here"></textarea>
+                        </div>
+
+                        <button class="sumbit" id="genrate" type="submit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script>
+    
+    var submit = document.getElementById("genrate");
+    var output = document.getElementById("output1");
+
+submit.addEventListener("click", () => {
+    var date1 = new Date(document.getElementById("date-1").value);
+    var date2 = new Date(document.getElementById("date-2").value);
+
+if (date1.getTime() && date2.getTime()) {
+    var timeDifference = date2.getTime() - date1.getTime();
+    var dayDifference = Math.abs(timeDifference / (1000 * 3600 * 24));
+    document.getElementById('output1').value = dayDifference; 
+}
+else {
+    var x = -1;
+    document.getElementById('output1').value = x;
+}
+});
+
+</script>
+</body>
+</html>

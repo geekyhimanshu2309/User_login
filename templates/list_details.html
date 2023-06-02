@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+    {% comment %} <script src="{%static 'js/script.js' %}"></script> {% endcomment %}
+</head>
+<body>
+      <div>
+        <table>
+            <tr id="header">
+                <th>Name</th>
+                <th>IEC Number</th>
+                <th>PAN Number</th>
+                <th>GST Number</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Factory Address</th>
+                <th>PIC</th>
+                <th>Job Type1</th>
+                <th>Job Type2</th>
+                <th>Job Type3</th>
+                <th>Email</th>
+                {% comment %} <th>Notes</th> {% endcomment %}
+            </tr>
+            {% for index in all_data %}
+            <tr>
+                <td>{{index.name}}</td>
+                <td>{{index.iecNo}}</td>
+                <td>{{index.panNo}}</td>
+                <td>{{index.gstNo}}</td>
+                <td>{{index.address}}</td>
+                <td>{{index.phoneNo}}</td>
+                <td>{{index.factaddress}}</td>
+                <td>{{index.pic}}</td>
+                <td>{{index.jobtype}}</td>
+                <td>{{index.jobtypes}}</td>
+                <td>{{index.jobtypet}}</td>
+                <td>{{index.email}}</td>
+                {% comment %} <td>{{index.notes}}</td> {% endcomment %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
